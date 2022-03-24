@@ -7,28 +7,28 @@ export const DataProvider = ({ children }) => {
   const [pokemonsList, setPokemonsList] = useState();
   const [next, setNext] = useState(0);
 
-  const getPokemons = useCallback(async () => {
-    await axios
+  const getPokemons = () => {
+    axios
       .get(`https://pokeapi.co/api/v2/pokemon/?offset=${next}&limit=20`)
       .then((response) => setPokemonsList(response.data))
       .catch((err) => console.log(err));
-  }, [next]);
+  };
 
   const previusPage = () => {
-    if (next >= 20) {
-      setNext(next - 20);
+    if (next >= 1) {
+      setNext(next - 1);
     }
   };
 
   const nextPage = () => {
-    if (next <= 1100) {
-      setNext(next + 20);
+    if (next < 1126) {
+      setNext(next + 1);
     }
   };
 
-  // useEffect(() => {
-  //   getPokemons();
-  // }, []);
+  useEffect(() => {
+    getPokemons();
+  }, [next]);
 
   console.log(pokemonsList);
 
