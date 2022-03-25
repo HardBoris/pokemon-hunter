@@ -1,6 +1,11 @@
 import { DataProvider } from "./Data";
+import { ImagoProvider } from "./Imago";
 
 const Providers = ({ children }) => {
-  return <DataProvider>{children}</DataProvider>;
+  return (
+    <DataProvider>
+      <ImagoProvider>{children}</ImagoProvider>
+    </DataProvider>
+  );
 };
 export default Providers;

@@ -1,0 +1,13 @@
+.layout {
+  width: 320px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+}
+
+@media (min-width: 1000px) {
+  .layout {
+    width: 90%;
+    height: 100vh;
+  }
+}

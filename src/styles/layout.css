@@ -1,0 +1,21 @@
+.layout {
+  box-sizing: border-box;
+  width: 320px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #e5e5e5;
+}
+
+/* .encabezado {
+  background-color: rbga(2, 2, 2, 1);
+  width: 100vw;
+  height: 80px;
+  text-align: right;
+} */
+
+@media (min-width: 1000px) {
+  .layout {
+    width: 90%;
+    height: 100vh;
+  }
+}

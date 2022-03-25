@@ -1,17 +1,20 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DataContext } from "../../providers/Data";
+import { ImagoContext } from "../../providers/Imago";
 import "./style.css";
 
-export const Card = () => {
-  const { pokemonsList } = useContext(DataContext);
+export const Card = ({ listo, i }) => {
+  const { imagoId } = useContext(ImagoContext);
 
   return (
     <div className="card">
       <div className="imago">
-        <figure></figure>
+        <figure>
+          <img src={imagoId[i]} alt="hola" />
+        </figure>
       </div>
       <div className="littera">
-        <h4>{pokemonsList.results[0]["name"]}</h4>
+        <h4>{listo["name"]}</h4>
         <p>
           Caracteristicas do Pokemon: Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Debitis adipisci nostrum maxime voluptate fuga,
