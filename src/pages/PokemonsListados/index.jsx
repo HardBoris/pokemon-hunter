@@ -11,23 +11,23 @@ export const Pl = () => {
     previusPage,
     nextPage,
     lastPage,
-    totalPage,
+    pokeList,
+    statusNext,
+    statusPrevious,
     next,
     qty,
-    pokemonsRequest,
   } = useContext(DataContext);
-  const [prima, setPrima] = useState(pokemonsRequest.previous);
-  const [ultima, setUltima] = useState(pokemonsRequest.next);
+  const [prima, setPrima] = useState(statusPrevious);
+  const [ultima, setUltima] = useState(statusNext);
 
   useEffect(() => {
-    setPrima(pokemonsRequest.previous);
-    setUltima(pokemonsRequest.next);
-  }, [pokemonsRequest]);
+    setPrima(statusPrevious);
+    setUltima(statusNext);
+  }, [pokeList]);
 
-  const myLista = pokemonsRequest.results;
-  const pages = totalPage() + 1;
+  const pages = Math.floor(qty / 20) + 1;
   const numerate = next / 20 + 1;
-  const long = myLista && myLista.length;
+  const long = pokeList && pokeList.length;
 
   return (
     <div className="layout">
@@ -39,8 +39,8 @@ export const Pl = () => {
               Exhibindo itens do {next + 1} a {next + long} de um total de {qty}
             </p>
           </div>
-          {myLista &&
-            myLista.map((item, index) => (
+          {pokeList &&
+            pokeList.map((item, index) => (
               <Card key={index} listo={item} i={index} />
             ))}
         </div>

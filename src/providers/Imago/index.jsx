@@ -4,8 +4,7 @@ import { DataContext } from "../Data";
 export const ImagoContext = createContext();
 
 export const ImagoProvider = ({ children }) => {
-  const { pokemonsRequest } = useContext(DataContext);
-  const pokeList = pokemonsRequest.results;
+  const { pokeList } = useContext(DataContext);
 
   const pokeNumStr = pokeList
     ? pokeList.map((item) => (item = item["url"].split("/")[6]))

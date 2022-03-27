@@ -1,5 +1,4 @@
-import { useContext, useEffect } from "react";
-import { DataContext } from "../../providers/Data";
+import { useContext } from "react";
 import { ImagoContext } from "../../providers/Imago";
 import "./style.css";
 

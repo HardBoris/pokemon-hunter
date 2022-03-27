@@ -5,10 +5,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [pokemonsRequest, setPokemonsRequest] = useState({});
-  const [pokemonsList, setPokemonsList] = useState([]);
   const [next, setNext] = useState(0);
-  const qty = pokemonsRequest.count;
-  const poketotal = qty - 6;
 
   const getPokemons = () => {
     axios
@@ -20,6 +17,12 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     getPokemons();
   }, [next]);
+
+  const qty = pokemonsRequest.count;
+  const poketotal = qty - 6;
+  const pokeList = pokemonsRequest.results;
+  const statusNext = pokemonsRequest.next;
+  const statusPrevious = pokemonsRequest.previous;
 
   const firstPage = () => {
     setNext(0);
@@ -41,26 +44,20 @@ export const DataProvider = ({ children }) => {
     setNext(poketotal);
   };
 
-  const totalPage = () => {
-    return poketotal / 20;
-  };
-
-  console.log(next);
+  console.log(pokemonsRequest);
 
   return (
     <DataContext.Provider
       value={{
         next,
-        pokemonsList,
-        pokemonsRequest,
         qty,
-        setPokemonsList,
-        getPokemons,
+        pokeList,
+        statusNext,
+        statusPrevious,
         previusPage,
         nextPage,
         firstPage,
         lastPage,
-        totalPage,
       }}
     >
       {children}
