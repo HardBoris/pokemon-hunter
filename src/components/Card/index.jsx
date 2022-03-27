@@ -19,14 +19,13 @@ export const Card = ({ listo, i }) => {
             {listo["name"]} #{pokeNum[i]}
           </h4>
         </div>
-        {/* <div className="txt"> */}
+
         <p className="txt">
           Caracteristicas do Pokemon: Lorem ipsum dolor sit amet consectetur
           adipisicing elit. Debitis adipisci nostrum maxime voluptate fuga,
           exercitationem, sunt error in reiciendis deserunt nulla eaque nihil
           quos consequatur hic amet, iusto repellat dolorem!
         </p>
-        {/* </div> */}
       </div>
     </div>
   );

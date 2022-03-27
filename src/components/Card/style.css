@@ -1,6 +1,6 @@
 .card {
-  width: 96%;
-  height: 350px;
+  width: 90%;
+  height: 300px;
   margin: auto;
   border-bottom: 2px solid #c5c5c5;
   display: flex;
@@ -9,11 +9,10 @@
   align-items: center;
 }
 .imago {
-  /* width: 200px;
-  height: 200px; */
   background-color: white;
   border-radius: 8px;
   border: 1px solid black;
+  text-align: center;
 }
 
 figure {
@@ -25,8 +24,8 @@ figure {
 }
 
 img {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
 }
 
 .littera {
@@ -55,4 +54,34 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: justify;
+}
+
+@media (min-width: 1000px) {
+  .card {
+    width: 96%;
+    height: 140px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .littera {
+    width: 90%;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .rotulo {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .txt {
+    width: 70%;
+  }
 }

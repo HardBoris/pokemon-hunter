@@ -4,12 +4,12 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   font-size: medium;
 }
 
 .botonera {
-  width: 94%;
+  width: 90%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -49,10 +49,15 @@ button:hover {
     height: 8vh;
     justify-content: flex-end;
     font-size: larger;
+    background-color: white;
   }
 
   .botonera {
+    margin: 0;
+    width: 96%;
     justify-content: flex-end;
+    background-color: #e5e5e5;
+    padding-right: 20px;
   }
 
   button {

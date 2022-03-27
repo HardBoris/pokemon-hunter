@@ -13,6 +13,7 @@ export const Pl = () => {
     lastPage,
     totalPage,
     next,
+    qty,
     pokemonsRequest,
   } = useContext(DataContext);
   const [prima, setPrima] = useState(pokemonsRequest.previous);
@@ -24,20 +25,25 @@ export const Pl = () => {
   }, [pokemonsRequest]);
 
   const myLista = pokemonsRequest.results;
-  const pages = totalPage();
+  const pages = totalPage() + 1;
   const numerate = next / 20 + 1;
+  const long = myLista && myLista.length;
 
   return (
     <div className="layout">
       <Header />
       <main>
-        <div className="paginacion">
-          <p>paginacion</p>
+        <div className="content">
+          <div className="counter">
+            <p>
+              Exhibindo itens do {next + 1} a {next + long} de um total de {qty}
+            </p>
+          </div>
+          {myLista &&
+            myLista.map((item, index) => (
+              <Card key={index} listo={item} i={index} />
+            ))}
         </div>
-        {myLista &&
-          myLista.map((item, index) => (
-            <Card key={index} listo={item} i={index} />
-          ))}
       </main>
       <Footer
         onFirst={() => firstPage()}

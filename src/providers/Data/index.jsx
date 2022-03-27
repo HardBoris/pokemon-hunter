@@ -7,7 +7,8 @@ export const DataProvider = ({ children }) => {
   const [pokemonsRequest, setPokemonsRequest] = useState({});
   const [pokemonsList, setPokemonsList] = useState([]);
   const [next, setNext] = useState(0);
-  const poketotal = pokemonsRequest.count - 6;
+  const qty = pokemonsRequest.count;
+  const poketotal = qty - 6;
 
   const getPokemons = () => {
     axios
@@ -52,6 +53,7 @@ export const DataProvider = ({ children }) => {
         next,
         pokemonsList,
         pokemonsRequest,
+        qty,
         setPokemonsList,
         getPokemons,
         previusPage,
