@@ -7,6 +7,7 @@ export const DataProvider = ({ children }) => {
   const [pokemonsRequest, setPokemonsRequest] = useState({});
   const [pokemonsList, setPokemonsList] = useState([]);
   const [next, setNext] = useState(0);
+  const poketotal = pokemonsRequest.count - 6;
 
   const getPokemons = () => {
     axios
@@ -19,6 +20,10 @@ export const DataProvider = ({ children }) => {
     getPokemons();
   }, [next]);
 
+  const firstPage = () => {
+    setNext(0);
+  };
+
   const previusPage = () => {
     if (next >= 20) {
       setNext(next - 20);
@@ -26,22 +31,34 @@ export const DataProvider = ({ children }) => {
   };
 
   const nextPage = () => {
-    if (next < 1126) {
+    if (next <= 1120) {
       setNext(next + 20);
     }
   };
 
-  console.log(pokemonsRequest);
+  const lastPage = () => {
+    setNext(poketotal);
+  };
+
+  const totalPage = () => {
+    return poketotal / 20;
+  };
+
+  console.log(next);
 
   return (
     <DataContext.Provider
       value={{
+        next,
         pokemonsList,
         pokemonsRequest,
         setPokemonsList,
         getPokemons,
         previusPage,
         nextPage,
+        firstPage,
+        lastPage,
+        totalPage,
       }}
     >
       {children}

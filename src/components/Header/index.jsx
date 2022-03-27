@@ -1,9 +1,12 @@
 import "./style.css";
+import { FaSearch } from "react-icons/fa";
+import { TiArrowSortedDown } from "react-icons/ti";
 export const Header = () => {
   return (
     <div className="hi-header">
       <div className="greet">
         <p>Olá, Fulano de Tal</p>
+        <TiArrowSortedDown />
       </div>
       <div className="lo-header">
         <div className="title">
@@ -13,7 +16,7 @@ export const Header = () => {
         <div className="searcher">
           <div className="in">
             <input type="text" placeholder="Buscar" />
-            <p>p</p>
+            <FaSearch />
           </div>
         </div>
       </div>
