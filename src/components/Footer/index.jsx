@@ -31,6 +31,9 @@ export const Footer = ({
           <RiSkipForwardFill />
         </button>
       </div>
+      <div className="cinta">
+        <p className="power">Powered by BG</p>
+      </div>
     </footer>
   );
 };

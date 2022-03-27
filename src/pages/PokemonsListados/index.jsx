@@ -25,7 +25,7 @@ export const Pl = () => {
 
   const myLista = pokemonsRequest.results;
   const pages = totalPage();
-  const numerate = next / 20;
+  const numerate = next / 20 + 1;
 
   return (
     <div className="layout">
