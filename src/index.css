@@ -3,7 +3,9 @@ div,
 figure,
 h1,
 p,
-input {
+input,
+img,
+h4 {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
