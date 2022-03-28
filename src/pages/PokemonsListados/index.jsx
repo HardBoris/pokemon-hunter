@@ -4,6 +4,7 @@ import { Card } from "../../components/Card";
 import { Header } from "../../components/Header";
 import { DataContext } from "../../providers/Data";
 import { Footer } from "../../components/Footer";
+import Modal from "../../components/Modal";
 
 export const Pl = () => {
   const {
@@ -19,6 +20,11 @@ export const Pl = () => {
   } = useContext(DataContext);
   const [prima, setPrima] = useState(statusPrevious);
   const [ultima, setUltima] = useState(statusNext);
+
+  // const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
+  // const handleSearchResult = () => {
+  //   setOpenSearchResultModal(!openSearchResultModal);
+  // };
 
   useEffect(() => {
     setPrima(statusPrevious);
@@ -55,6 +61,9 @@ export const Pl = () => {
         numPage={numerate}
         pages={pages}
       />
+      {/* <Modal isOpen={openSearchResultModal} setIsOpen={handleSearchResult}>
+        <Card listo={finder} i={0} />
+      </Modal> */}
     </div>
   );
 };

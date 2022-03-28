@@ -5,7 +5,9 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [pokemonsRequest, setPokemonsRequest] = useState({});
+  const [allPoke, setAllPoke] = useState([]);
   const [next, setNext] = useState(0);
+  const [finder, setFinder] = useState([]);
 
   const getPokemons = () => {
     axios
@@ -14,9 +16,22 @@ export const DataProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const allPokemons = () => {
+    axios
+      .get(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1127`)
+      .then((response) => setAllPoke(response.data.results))
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     getPokemons();
   }, [next]);
+
+  useEffect(() => {
+    allPokemons();
+  }, []);
+
+  console.log(allPoke);
 
   const qty = pokemonsRequest.count;
   const poketotal = qty - 6;
@@ -44,7 +59,24 @@ export const DataProvider = ({ children }) => {
     setNext(poketotal);
   };
 
-  console.log(pokemonsRequest);
+  const miprova = allPoke.map((item) => (item = item["url"].split("/")[6]));
+
+  console.log(miprova);
+
+  const buscador = (data) => {
+    const procTxt = allPoke.filter((item) => item["name"] === data);
+    const procNum = miprova.includes(data);
+    // const procNum = miprova.filter((item) => item === data);
+    if (procTxt.length !== 0) {
+      setFinder(procTxt);
+    } else if (procNum) {
+      let i = miprova.indexOf(data);
+      setFinder([allPoke[i]]);
+    } else {
+      setFinder([]);
+    }
+    // setFinder(allPoke.filter((item) => item["name"] === data));
+  };
 
   return (
     <DataContext.Provider
@@ -54,10 +86,12 @@ export const DataProvider = ({ children }) => {
         pokeList,
         statusNext,
         statusPrevious,
+        finder,
         previusPage,
         nextPage,
         firstPage,
         lastPage,
+        buscador,
       }}
     >
       {children}
