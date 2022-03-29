@@ -19,3 +19,12 @@ h4 {
   width: 100vw;
   height: 100vh;
 }
+
+:root {
+  --bg-color: #e5e5e5;
+  --border-color: #c5c5c5;
+  --claro-color: white;
+  --oscuro-color: black;
+  --escarlata: #800000;
+  --purple-shadow: rgba(93, 95, 239, 0.5);
+}

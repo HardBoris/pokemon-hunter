@@ -2,16 +2,16 @@
   width: 90%;
   height: 300px;
   margin: auto;
-  border-bottom: 2px solid #c5c5c5;
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .imago {
-  background-color: white;
+  background-color: var(--claro-color);
   border-radius: 8px;
-  border: 1px solid black;
+  border: 1px solid var(--oscuro-color);
   text-align: center;
 }
 

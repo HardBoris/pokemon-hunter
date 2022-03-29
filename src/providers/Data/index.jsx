@@ -31,8 +31,6 @@ export const DataProvider = ({ children }) => {
     allPokemons();
   }, []);
 
-  console.log(allPoke);
-
   const qty = pokemonsRequest.count;
   const poketotal = qty - 6;
   const pokeList = pokemonsRequest.results;
@@ -61,21 +59,18 @@ export const DataProvider = ({ children }) => {
 
   const miprova = allPoke.map((item) => (item = item["url"].split("/")[6]));
 
-  console.log(miprova);
-
   const buscador = (data) => {
     const procTxt = allPoke.filter((item) => item["name"] === data);
     const procNum = miprova.includes(data);
-    // const procNum = miprova.filter((item) => item === data);
     if (procTxt.length !== 0) {
       setFinder(procTxt);
     } else if (procNum) {
       let i = miprova.indexOf(data);
       setFinder([allPoke[i]]);
     } else {
+      // setFinder([{ name: "error", url: "u/s/s/a/a/f/0" }]);
       setFinder([]);
     }
-    // setFinder(allPoke.filter((item) => item["name"] === data));
   };
 
   return (
@@ -87,6 +82,7 @@ export const DataProvider = ({ children }) => {
         statusNext,
         statusPrevious,
         finder,
+        allPoke,
         previusPage,
         nextPage,
         firstPage,

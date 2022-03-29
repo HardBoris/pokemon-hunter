@@ -6,13 +6,18 @@ import Modal from "../Modal";
 import { Card } from "../Card";
 import { DataContext } from "../../providers/Data";
 import { Result } from "../Result";
+import { Errado } from "../Error";
 export const Header = () => {
   const [input, setInput] = useState("");
   const { buscador, finder } = useContext(DataContext);
   const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
 
-  const handleClick = () => {
+  const closeFunction = () => {
     setOpenSearchResultModal(!openSearchResultModal);
+  };
+
+  const handleClick = () => {
+    closeFunction();
     buscador(input);
   };
 
@@ -21,7 +26,7 @@ export const Header = () => {
   // const handleClick = () => {
   //   buscador(input);
   // };
-  console.log(finder);
+  // console.log(finder);
   // console.log(identificator);
   return (
     <div className="hi-header">
@@ -47,8 +52,12 @@ export const Header = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={openSearchResultModal} setIsOpen={handleClick}>
-        <Result listo={finder} />
+      <Modal isOpen={openSearchResultModal} setIsOpen={closeFunction}>
+        {finder.length > 0 ? (
+          <Result listo={finder} closeFunction={closeFunction} />
+        ) : (
+          <Errado />
+        )}
       </Modal>
     </div>
   );
