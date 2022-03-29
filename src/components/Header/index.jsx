@@ -56,7 +56,7 @@ export const Header = () => {
         {finder.length > 0 ? (
           <Result listo={finder} closeFunction={closeFunction} />
         ) : (
-          <Errado />
+          <Errado closeFunction={closeFunction} />
         )}
       </Modal>
     </div>
