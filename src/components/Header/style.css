@@ -48,6 +48,7 @@
   color: var(--escarlata);
   background-color: var(--bg-color);
   font-size: medium;
+  cursor: pointer;
 }
 
 .lo-header {

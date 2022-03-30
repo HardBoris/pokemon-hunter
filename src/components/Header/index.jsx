@@ -7,14 +7,20 @@ import { DataContext } from "../../providers/Data";
 import { Result } from "../Result";
 import { Errado } from "../Error";
 import { CapturaContext } from "../../providers/Capturas";
+import { PokeFrame } from "../Frame";
 export const Header = () => {
   const [input, setInput] = useState("");
   const { buscador, finder } = useContext(DataContext);
   const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
-  const { freedom } = useContext(CapturaContext);
+  const [openShowModal, setOpenShowModal] = useState(false);
+  const { freedom, releasePokemon } = useContext(CapturaContext);
 
   const handlerModal = () => {
     setOpenSearchResultModal(!openSearchResultModal);
+  };
+
+  const handlerShowModal = () => {
+    setOpenShowModal(!openShowModal);
   };
 
   const openModal = () => {
@@ -30,7 +36,7 @@ export const Header = () => {
         <div className="dropdown">
           <TiArrowSortedDown />
           <div className="ddcontent">
-            <p>Minhas Capturas</p>
+            <p onClick={() => handlerShowModal()}>Minhas Capturas</p>
           </div>
         </div>
       </div>
@@ -58,6 +64,9 @@ export const Header = () => {
         ) : (
           <Errado closeFunction={handlerModal} />
         )}
+      </Modal>
+      <Modal isOpen={openShowModal} setIsOpen={handlerShowModal}>
+        <PokeFrame soltura={releasePokemon} />
       </Modal>
     </div>
   );

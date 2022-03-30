@@ -31,7 +31,7 @@ export const CapturaProvider = ({ children }) => {
 
   return (
     <CapturaContext.Provider
-      value={{ addPokemon, releasePokemon, freedom, isFree }}
+      value={{ addPokemon, releasePokemon, freedom, isFree, captured }}
     >
       {children}
     </CapturaContext.Provider>
