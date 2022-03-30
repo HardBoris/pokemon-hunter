@@ -16,27 +16,28 @@ export const Capturado = ({ capturado, soltura }) => {
   const imago = identificator !== 0 && endereco(identificator);
 
   return (
-    <div className="rcard">
-      <div className="rimago">
-        <figure className="rfigure">
-          <img className="rimg" src={imago} alt={capturado["name"]} />
+    <div className="ccard">
+      <div className="cimago">
+        <figure className="cfigure">
+          <img className="cimg" src={imago} alt={capturado["name"]} />
         </figure>
       </div>
-      <div className="rlittera">
-        <div className="rrotulo">
+      <div className="clittera">
+        <div className="crotulo">
           <h4>
             {capturado["name"]} #{identificator}
           </h4>
         </div>
-      </div>
-      <div className="btn">
         <button
-          className="libera"
+          className="clibera"
           onClick={() => releasePokemon(capturado["name"])}
         >
           liberar
         </button>
       </div>
+      {/* <div className="cbtn">
+        
+      </div> */}
     </div>
   );
 };

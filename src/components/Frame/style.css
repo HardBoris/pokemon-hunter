@@ -1,0 +1,109 @@
+.marco {
+  width: 300px;
+  max-height: 80vh;
+}
+
+.ftop {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.titulo {
+  width: 270px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.fclosebtn {
+  width: 30px;
+  height: 30px;
+  background-color: var(--escarlata);
+  color: var(--claro-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 0 6px 0 0;
+  cursor: pointer;
+}
+
+.fclosebtn:hover {
+  background-color: var(--bg-color);
+  color: var(--escarlata);
+  border: 1px solid var(--escarlata);
+}
+
+.show {
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+}
+
+.btnFrame {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.flibera {
+  width: 80%;
+  height: 30px;
+  background-color: var(--verde);
+  border-radius: 8px;
+  color: var(--claro-color);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.flibera:hover {
+  border: 1px solid var(--escarlata);
+  background-color: var(--bg-color);
+  color: var(--escarlata);
+}
+
+@media (min-width: 1000px) {
+  .marco {
+    width: 800px;
+  }
+
+  .ftop {
+    height: 50px;
+  }
+
+  .titulo {
+    width: 750px;
+  }
+
+  .fclosebtn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .show {
+    height: 64vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .btnFrame {
+    width: 100%;
+    height: 100px;
+  }
+
+  .flibera {
+    width: 50%;
+    height: 50px;
+  }
+}

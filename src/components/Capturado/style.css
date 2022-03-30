@@ -1,23 +1,25 @@
-.rcard {
-  width: 300px;
+.ccard {
+  width: 280px;
   height: auto;
   margin: auto;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
+  /* border-radius: 8px; */
+  border-bottom: 1px solid var(--border-color);
 }
 
-.top {
+/* .top {
   width: 100%;
   height: 30px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
+} */
 
-.closebtn {
+/* .closebtn {
   width: 30px;
   height: 30px;
   background-color: var(--escarlata);
@@ -29,22 +31,23 @@
   font-weight: bold;
   border-radius: 6px;
   cursor: pointer;
-}
+} */
 
-.closebtn:hover {
+/* .closebtn:hover {
   background-color: var(--bg-color);
   color: var(--escarlata);
   border: 1px solid var(--escarlata);
-}
+} */
 
-.rimago {
+.cimago {
   background-color: var(--claro-color);
   border-radius: 8px;
   /* margin: 20px 0; */
   text-align: center;
+  border: 1px solid var(--border-color);
 }
 
-.rfigure {
+.cfigure {
   width: 100%;
   height: 100%;
   display: flex;
@@ -52,12 +55,12 @@
   align-items: center;
 }
 
-.rimg {
-  width: 150px;
-  height: 150px;
+.cimg {
+  width: 100px;
+  height: 100px;
 }
 
-.rlittera {
+.clittera {
   width: 80%;
   height: 100px;
   display: flex;
@@ -66,7 +69,7 @@
   align-items: center;
 }
 
-.rrotulo {
+.crotulo {
   width: 100%;
   height: 40px;
   display: flex;
@@ -75,17 +78,7 @@
   font-size: larger;
 }
 
-.rtxt {
-  height: 60px;
-  width: 220px;
-  font-size: 14px;
-  white-space: normal;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: justify;
-}
-
-.btn {
+.cbtn {
   width: 100%;
   height: 80px;
   display: flex;
@@ -93,18 +86,20 @@
   align-items: center;
 }
 
-.captura {
+.clibera {
   width: 80%;
-  height: 50%;
-  background-color: var(--bg-color);
+  height: 30px;
+  background-color: var(--verde);
   border-radius: 8px;
-  color: var(--escarlata);
+  color: var(--claro-color);
+  font-weight: bold;
   cursor: pointer;
 }
 
-.captura:hover {
-  background-color: var(--escarlata);
-  color: var(--bg-color);
+.clibera:hover {
+  border: 1px solid var(--escarlata);
+  background-color: var(--bg-color);
+  color: var(--escarlata);
 }
 
 @media (min-width: 1000px) {

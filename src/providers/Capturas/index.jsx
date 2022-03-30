@@ -16,12 +16,18 @@ export const CapturaProvider = ({ children }) => {
     setIsFree(true);
   };
 
+  const allRelease = () => {
+    setCaptured([]);
+  };
+
   const freedom = (data) => {
     console.log(data);
     let nombres = captured.length > 0 && captured.map((item) => item["name"]);
     if (nombres.length > 0) {
       if (nombres.includes(data)) {
         setIsFree(false);
+      } else {
+        setIsFree(true);
       }
     }
   };
@@ -31,7 +37,14 @@ export const CapturaProvider = ({ children }) => {
 
   return (
     <CapturaContext.Provider
-      value={{ addPokemon, releasePokemon, freedom, isFree, captured }}
+      value={{
+        addPokemon,
+        releasePokemon,
+        allRelease,
+        freedom,
+        isFree,
+        captured,
+      }}
     >
       {children}
     </CapturaContext.Provider>

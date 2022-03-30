@@ -13,7 +13,7 @@ export const Header = () => {
   const { buscador, finder } = useContext(DataContext);
   const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
   const [openShowModal, setOpenShowModal] = useState(false);
-  const { freedom, releasePokemon } = useContext(CapturaContext);
+  const { freedom, releasePokemon, allRelease } = useContext(CapturaContext);
 
   const handlerModal = () => {
     setOpenSearchResultModal(!openSearchResultModal);
@@ -21,6 +21,11 @@ export const Header = () => {
 
   const handlerShowModal = () => {
     setOpenShowModal(!openShowModal);
+  };
+
+  const liberal = () => {
+    allRelease();
+    handlerShowModal();
   };
 
   const openModal = () => {
@@ -66,7 +71,11 @@ export const Header = () => {
         )}
       </Modal>
       <Modal isOpen={openShowModal} setIsOpen={handlerShowModal}>
-        <PokeFrame soltura={releasePokemon} />
+        <PokeFrame
+          soltura={releasePokemon}
+          closeFunction={handlerShowModal}
+          allRelease={liberal}
+        />
       </Modal>
     </div>
   );
