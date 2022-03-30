@@ -1,0 +1,38 @@
+.emptyframe {
+  width: 300px;
+  height: 300px;
+  font-size: calc(14px + 1.5vmin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.vh1,
+.vh4 {
+  width: 90%;
+  text-align: center;
+}
+
+.vicon {
+  width: 40%;
+  height: 40%;
+  font-size: calc(60px + 5vmin);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--escarlata);
+  cursor: pointer;
+}
+
+.vicon:hover {
+  border: 2px solid var(--escarlata);
+  border-radius: 8px;
+}
+
+@media (min-width: 1000px) {
+  .emptyframe {
+    width: 400px;
+    height: 400px;
+  }
+}

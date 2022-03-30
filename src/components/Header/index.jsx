@@ -8,12 +8,14 @@ import { Result } from "../Result";
 import { Errado } from "../Error";
 import { CapturaContext } from "../../providers/Capturas";
 import { PokeFrame } from "../Frame";
+import { Empty } from "../Empty";
 export const Header = () => {
   const [input, setInput] = useState("");
   const { buscador, finder } = useContext(DataContext);
   const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
   const [openShowModal, setOpenShowModal] = useState(false);
-  const { freedom, releasePokemon, allRelease } = useContext(CapturaContext);
+  const { freedom, releasePokemon, allRelease, captured } =
+    useContext(CapturaContext);
 
   const handlerModal = () => {
     setOpenSearchResultModal(!openSearchResultModal);
@@ -23,10 +25,10 @@ export const Header = () => {
     setOpenShowModal(!openShowModal);
   };
 
-  const liberal = () => {
-    allRelease();
-    handlerShowModal();
-  };
+  // const liberal = () => {
+  //   allRelease();
+  //   handlerShowModal();
+  // };
 
   const openModal = () => {
     handlerModal();
@@ -71,11 +73,15 @@ export const Header = () => {
         )}
       </Modal>
       <Modal isOpen={openShowModal} setIsOpen={handlerShowModal}>
-        <PokeFrame
-          soltura={releasePokemon}
-          closeFunction={handlerShowModal}
-          allRelease={liberal}
-        />
+        {captured.length > 0 ? (
+          <PokeFrame
+            soltura={releasePokemon}
+            closeFunction={handlerShowModal}
+            allRelease={allRelease}
+          />
+        ) : (
+          <Empty closeFunction={handlerShowModal} />
+        )}
       </Modal>
     </div>
   );
