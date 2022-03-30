@@ -8,6 +8,12 @@
   justify-content: center;
   align-items: center;
 }
+
+.card:hover {
+  border-top: 2px solid var(--escarlata);
+  border-bottom: 2px solid var(--escarlata);
+}
+
 .imago {
   background-color: var(--claro-color);
   border-radius: 8px;

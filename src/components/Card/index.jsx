@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { ImagoContext } from "../../providers/Imago";
 import "./style.css";
 
-export const Card = ({ listo, i }) => {
+export const Card = ({ listo, i, mostra }) => {
   const { pokeNum, imagoId } = useContext(ImagoContext);
 
   return (
-    <div className="card">
+    <div className="card" onClick={() => mostra(listo["name"])}>
       <div className="imago">
         <figure>
           <img src={imagoId[i]} alt={listo["name"]} />

@@ -64,11 +64,12 @@ export const DataProvider = ({ children }) => {
     const procNum = miprova.includes(data);
     if (procTxt.length !== 0) {
       setFinder(procTxt);
+      return procTxt;
     } else if (procNum) {
       let i = miprova.indexOf(data);
       setFinder([allPoke[i]]);
+      return allPoke[i];
     } else {
-      // setFinder([{ name: "error", url: "u/s/s/a/a/f/0" }]);
       setFinder([]);
     }
   };

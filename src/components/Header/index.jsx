@@ -3,31 +3,26 @@ import { FaSearch } from "react-icons/fa";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { useContext, useState } from "react";
 import Modal from "../Modal";
-import { Card } from "../Card";
 import { DataContext } from "../../providers/Data";
 import { Result } from "../Result";
 import { Errado } from "../Error";
+import { CapturaContext } from "../../providers/Capturas";
 export const Header = () => {
   const [input, setInput] = useState("");
   const { buscador, finder } = useContext(DataContext);
   const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
+  const { freedom } = useContext(CapturaContext);
 
-  const closeFunction = () => {
+  const handlerModal = () => {
     setOpenSearchResultModal(!openSearchResultModal);
   };
 
-  const handleClick = () => {
-    closeFunction();
-    buscador(input);
+  const openModal = () => {
+    handlerModal();
+    let encontrado = buscador(input);
+    freedom(encontrado["name"]);
   };
 
-  // const identificator = parseInt(finder[0]["url"].split("/")[6]);
-
-  // const handleClick = () => {
-  //   buscador(input);
-  // };
-  // console.log(finder);
-  // console.log(identificator);
   return (
     <div className="hi-header">
       <div className="greet">
@@ -46,17 +41,17 @@ export const Header = () => {
               placeholder="Buscar"
               onChange={(e) => setInput(e.target.value)}
             />
-            <div className="icon" as="button" onClick={() => handleClick()}>
+            <div className="icon" as="button" onClick={() => openModal()}>
               <FaSearch />
             </div>
           </div>
         </div>
       </div>
-      <Modal isOpen={openSearchResultModal} setIsOpen={closeFunction}>
+      <Modal isOpen={openSearchResultModal} setIsOpen={handlerModal}>
         {finder.length > 0 ? (
-          <Result listo={finder} closeFunction={closeFunction} />
+          <Result listo={finder} closeFunction={handlerModal} />
         ) : (
-          <Errado closeFunction={closeFunction} />
+          <Errado closeFunction={handlerModal} />
         )}
       </Modal>
     </div>

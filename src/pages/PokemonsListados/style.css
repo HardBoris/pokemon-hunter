@@ -58,4 +58,8 @@ main {
     font-size: large;
     padding-left: 20px;
   }
+
+  .prueba:hover {
+    border: 2px solid var(--escarlata);
+  }
 }

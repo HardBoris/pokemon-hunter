@@ -1,13 +1,15 @@
 .errorframe {
   width: 300px;
   height: 300px;
+  font-size: calc(14px + 1.5vmin);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
 
-.eh1 {
+.eh1,
+.eh4 {
   width: 90%;
   text-align: center;
 }
@@ -15,14 +17,22 @@
 .eicon {
   width: 40%;
   height: 40%;
-  font-size: 80px;
+  font-size: calc(60px + 5vmin);
   display: flex;
   justify-content: center;
   align-items: center;
   color: var(--escarlata);
+  cursor: pointer;
 }
 
 .eicon:hover {
   border: 2px solid var(--escarlata);
   border-radius: 8px;
+}
+
+@media (min-width: 1000px) {
+  .errorframe {
+    width: 400px;
+    height: 400px;
+  }
 }

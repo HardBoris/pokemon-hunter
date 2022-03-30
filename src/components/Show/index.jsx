@@ -3,17 +3,12 @@ import { CapturaContext } from "../../providers/Capturas";
 import { ImagoContext } from "../../providers/Imago";
 import "./style.css";
 
-export const Result = ({ listo, closeFunction }) => {
+export const Show = ({ listo, closeFunction }) => {
   const { endereco } = useContext(ImagoContext);
-  const { addPokemon, releasePokemon, isFree } = useContext(CapturaContext);
+  const { addPokemon } = useContext(CapturaContext);
 
   const handleCaptura = () => {
     addPokemon(listo);
-    closeFunction();
-  };
-
-  const handleSoltura = () => {
-    releasePokemon(listo[0]["name"]);
     closeFunction();
   };
 
@@ -25,7 +20,7 @@ export const Result = ({ listo, closeFunction }) => {
   return (
     <div className="rcard">
       <div className="top">
-        <div className="closebtn" as="button" onClick={() => closeFunction()}>
+        <div className="closebtn" as="button" onClick={closeFunction}>
           <p>X</p>
         </div>
       </div>
@@ -51,15 +46,9 @@ export const Result = ({ listo, closeFunction }) => {
         </p>
       </div>
       <div className="btn">
-        {isFree ? (
-          <button className="captura" onClick={() => handleCaptura()}>
-            Capturar
-          </button>
-        ) : (
-          <button className="captura" onClick={() => handleSoltura()}>
-            Liberar
-          </button>
-        )}
+        <button className="captura" onClick={() => handleCaptura()}>
+          Capturar
+        </button>
       </div>
     </div>
   );

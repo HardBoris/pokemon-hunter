@@ -5,6 +5,8 @@ import { Header } from "../../components/Header";
 import { DataContext } from "../../providers/Data";
 import { Footer } from "../../components/Footer";
 import Modal from "../../components/Modal";
+import { Result } from "../../components/Result";
+import { CapturaContext } from "../../providers/Capturas";
 
 export const Pl = () => {
   const {
@@ -17,14 +19,19 @@ export const Pl = () => {
     statusPrevious,
     next,
     qty,
+    finder,
+    buscador,
   } = useContext(DataContext);
+  const { freedom } = useContext(CapturaContext);
   const [prima, setPrima] = useState(statusPrevious);
   const [ultima, setUltima] = useState(statusNext);
+  const [openResultModal, setOpenResultModal] = useState(false);
 
-  // const [openSearchResultModal, setOpenSearchResultModal] = useState(false);
-  // const handleSearchResult = () => {
-  //   setOpenSearchResultModal(!openSearchResultModal);
-  // };
+  const handlerModal = (data) => {
+    setOpenResultModal(!openResultModal);
+    buscador(data);
+    freedom(data);
+  };
 
   useEffect(() => {
     setPrima(statusPrevious);
@@ -47,7 +54,7 @@ export const Pl = () => {
           </div>
           {pokeList &&
             pokeList.map((item, index) => (
-              <Card key={index} listo={item} i={index} />
+              <Card key={index} listo={item} i={index} mostra={handlerModal} />
             ))}
         </div>
       </main>
@@ -61,9 +68,11 @@ export const Pl = () => {
         numPage={numerate}
         pages={pages}
       />
-      {/* <Modal isOpen={openSearchResultModal} setIsOpen={handleSearchResult}>
-        <Card listo={finder} i={0} />
-      </Modal> */}
+      <Modal isOpen={openResultModal} setIsOpen={handlerModal}>
+        {finder.length > 0 && (
+          <Result listo={finder} closeFunction={handlerModal} />
+        )}
+      </Modal>
     </div>
   );
 };
