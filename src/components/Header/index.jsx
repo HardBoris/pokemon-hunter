@@ -27,7 +27,12 @@ export const Header = () => {
     <div className="hi-header">
       <div className="greet">
         <p>Olá, Fulano de Tal</p>
-        <TiArrowSortedDown />
+        <div className="dropdown">
+          <TiArrowSortedDown />
+          <div className="ddcontent">
+            <p>Minhas Capturas</p>
+          </div>
+        </div>
       </div>
       <div className="lo-header">
         <div className="title">

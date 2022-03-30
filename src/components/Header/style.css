@@ -20,6 +20,36 @@
   align-items: center;
 }
 
+.dropdown {
+  width: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.ddcontent {
+  width: 200px;
+  height: 50px;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 1;
+  background-color: var(--oscuro-color);
+}
+
+.dropdown:hover .ddcontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--escarlata);
+  color: var(--escarlata);
+  background-color: var(--bg-color);
+  font-size: medium;
+}
+
 .lo-header {
   width: 100%;
   height: 61%;
