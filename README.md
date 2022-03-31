@@ -20,7 +20,7 @@ Foi providenciado um [style guide no Figma](https://www.figma.com/file/J8M1IeVSd
 
 ## Segunda Milha
 
-O termo "segunda milha" é utilizado nos ambientes cristãos para expressar aquilo que não foi pedido para fazer, mas, é muito bem recebido quando se faz. Neste caso do projeto, se refere a fetures extras que o desenvolvedor poderia fazer, com o intuito de mostrar iniciativa e dominio das disciplinas testadas: React JS e CSS.
+O termo "segunda milha" é utilizado nos ambientes cristãos para expressar aquilo que não foi pedido para fazer, mas, é muito bem recebido quando se faz. Neste caso do projeto, se refere a features extras que o desenvolvedor poderia fazer, com o intuito de mostrar iniciativa e dominio das disciplinas testadas: React JS e CSS.
 
 Nos extras implementados neste projeto são:
 
