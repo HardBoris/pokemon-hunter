@@ -4,7 +4,7 @@ import { Capturado } from "../Capturado";
 import "./style.css";
 
 export const PokeFrame = ({ soltura, closeFunction, allRelease }) => {
-  const { captured, releasePokemon } = useContext(CapturaContext);
+  const { captured } = useContext(CapturaContext);
   return (
     <div className="marco">
       <div className="ftop">

@@ -52,11 +52,11 @@ export const Result = ({ listo, closeFunction }) => {
       </div>
       <div className="btn">
         {isFree ? (
-          <button className="captura" onClick={() => handleCaptura()}>
+          <button className="rcaptura" onClick={() => handleCaptura()}>
             Capturar
           </button>
         ) : (
-          <button className="captura" onClick={() => handleSoltura()}>
+          <button className="rlibera" onClick={() => handleSoltura()}>
             Liberar
           </button>
         )}

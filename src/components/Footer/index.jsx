@@ -14,7 +14,7 @@ export const Footer = ({
 }) => {
   return (
     <footer>
-      <div className="botonera">
+      <div className="botonera-fit">
         <p>
           {numPage} de {pages} páginas
         </p>

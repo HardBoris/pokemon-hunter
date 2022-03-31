@@ -8,7 +8,7 @@ footer {
   font-size: medium;
 }
 
-.botonera {
+.botonera-fit {
   width: 90%;
   margin: auto;
   display: flex;
@@ -52,7 +52,7 @@ button:hover {
     background-color: var(--claro-color);
   }
 
-  .botonera {
+  .botonera-fit {
     margin: 0;
     width: 96%;
     justify-content: flex-end;

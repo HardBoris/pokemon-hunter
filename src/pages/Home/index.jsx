@@ -1,22 +1,28 @@
-import { useContext, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
-// import { Card } from "../../components/Card";
-import { DataContext } from "../../providers/Data";
+import Modal from "../../components/Modal";
+import { User } from "../../components/User";
+import "./style.css";
 
 export const Home = () => {
-  const { previusPage, nextPage, getPokemons, next } = useContext(DataContext);
+  const [openModal, setOpenModal] = useState(false);
   const history = useHistory();
 
+  const handlerModal = () => {
+    setOpenModal(!openModal);
+  };
+
   return (
-    <div>
-      <h1>Hola</h1>
-      {/* <Card /> */}
-      <button type="button" onClick={() => history.push("/listas")}>
-        lista
+    <div className="letras">
+      <button className="btnStart" type="button" onClick={() => handlerModal()}>
+        Start
       </button>
-      {/* <button type="button" onClick={() => nextPage()}>
-        avanzar
-      </button> */}
+      <Modal isOpen={openModal} setIsOpen={handlerModal}>
+        <User
+          closeFunction={() => handlerModal()}
+          avanza={() => history.push("/pokemons")}
+        />
+      </Modal>
     </div>
   );
 };

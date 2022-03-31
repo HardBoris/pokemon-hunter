@@ -8,6 +8,7 @@ export const DataProvider = ({ children }) => {
   const [allPoke, setAllPoke] = useState([]);
   const [next, setNext] = useState(0);
   const [finder, setFinder] = useState([]);
+  const [user, setUser] = useState("");
 
   const getPokemons = () => {
     axios
@@ -57,6 +58,10 @@ export const DataProvider = ({ children }) => {
     setNext(poketotal);
   };
 
+  const meuNome = (data) => {
+    setUser(data);
+  };
+
   const miprova = allPoke.map((item) => (item = item["url"].split("/")[6]));
 
   const buscador = (data) => {
@@ -89,6 +94,8 @@ export const DataProvider = ({ children }) => {
         firstPage,
         lastPage,
         buscador,
+        meuNome,
+        user,
       }}
     >
       {children}

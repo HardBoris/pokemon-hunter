@@ -21,12 +21,6 @@ export const ImagoProvider = ({ children }) => {
 
   const imagoId = pokeNum && pokeNum.map((item) => (item = endereco(item)));
 
-  // const meuPokeList = allPoke
-  //   ? allPoke.map((item) => (item = item["url"].split("/")[6]))
-  //   : [];
-  // console.log(allPoke);
-  // console.log(meuPokeList);
-
   return (
     <ImagoContext.Provider value={{ pokeNum, imagoId, endereco }}>
       {children}

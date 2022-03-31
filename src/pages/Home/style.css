@@ -1,0 +1,27 @@
+.letras {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../assets/pokemongo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnStart {
+  width: 200px;
+  height: 50px;
+  background-color: var(--escarlata);
+  border-radius: 8px;
+  color: var(--bg-color);
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.btnStart:hover {
+  border: 1px solid var(--escarlata);
+  color: var(--escarlata);
+  background-color: var(--bg-color);
+}

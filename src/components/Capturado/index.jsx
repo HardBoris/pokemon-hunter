@@ -5,11 +5,7 @@ import "./style.css";
 
 export const Capturado = ({ capturado, soltura }) => {
   const { endereco } = useContext(ImagoContext);
-  const { addPokemon, captured, releasePokemon } = useContext(CapturaContext);
-
-  // const handlerSoltura = () => {
-  //   releasePokemon();
-  // };
+  const { releasePokemon } = useContext(CapturaContext);
 
   const identificator = parseInt(capturado["url"].split("/")[6]);
 
@@ -35,9 +31,6 @@ export const Capturado = ({ capturado, soltura }) => {
           liberar
         </button>
       </div>
-      {/* <div className="cbtn">
-        
-      </div> */}
     </div>
   );
 };

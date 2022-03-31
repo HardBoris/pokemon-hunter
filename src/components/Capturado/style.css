@@ -4,45 +4,14 @@
   margin: auto;
   padding: 10px 0;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  /* border-radius: 8px; */
   border-bottom: 1px solid var(--border-color);
 }
-
-/* .top {
-  width: 100%;
-  height: 30px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-} */
-
-/* .closebtn {
-  width: 30px;
-  height: 30px;
-  background-color: var(--escarlata);
-  color: var(--claro-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: larger;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-} */
-
-/* .closebtn:hover {
-  background-color: var(--bg-color);
-  color: var(--escarlata);
-  border: 1px solid var(--escarlata);
-} */
 
 .cimago {
   background-color: var(--claro-color);
   border-radius: 8px;
-  /* margin: 20px 0; */
   text-align: center;
   border: 1px solid var(--border-color);
 }
@@ -76,6 +45,7 @@
   justify-content: center;
   align-items: center;
   font-size: larger;
+  text-align: center;
 }
 
 .cbtn {

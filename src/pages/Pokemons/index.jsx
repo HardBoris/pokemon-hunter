@@ -8,7 +8,7 @@ import Modal from "../../components/Modal";
 import { Result } from "../../components/Result";
 import { CapturaContext } from "../../providers/Capturas";
 
-export const Pl = () => {
+export const Pokemons = () => {
   const {
     firstPage,
     previusPage,
